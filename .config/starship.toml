@@ -1,0 +1,53 @@
+## Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Format
+format = '($container )$python $sudo$character$directory'
+
+
+# Right prompt
+right_format = '((\(($git_branch)( $git_status)\) ))$time'
+
+[sudo]
+format = "$symbol"
+
+[character]
+success_symbol = "[❯](bold fg:#A3BE8C)"
+error_symbol ="[❯](bold fg:#BF616A)"
+
+[container]
+format = "$symbol"
+
+[time]
+disabled = false
+format = '[$time]($style)'
+style = "fg:#B48EAD"
+
+[git_branch]
+format = '$branch'
+
+[git_status]
+format = '[([$all_status](fg:#88C0D0))($ahead_behind)]($style)'
+ahead = "[⇡${count}](fg:#EBCB8B)"
+diverged = "[⇡${ahead_count}⇣${behind_count}](fg:#BF616A)"
+behind = "[⇣${count}](fg:#EBCB8B)"
+up_to_date = "[✓](fg:#A3BE8C)"
+
+[directory]
+style="bold fg:#88c0d0"
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[package]
+disabled = true
+
+[python]
+format = '[$virtualenv]($style)'
+style = "#5E81AC"
